@@ -88,5 +88,101 @@ git checkout "название ветки". При изменении mergefile 
 
 
 
+\## 4. Лог команд
+
+
+
+```bash
+
+&nbsp;  1  git clone https://github.com/kirzsl/LR6.git
+
+&nbsp;  2  cd LR6
+
+&nbsp;  3  git config user.name "4414 Легконравов К.С."
+
+&nbsp;  4  git config user.email "klegkonravov@mail.ru"
+
+&nbsp;  5  git branch feature
+
+&nbsp;  6  git checkout feature
+
+&nbsp;  7  git status
+
+&nbsp;  8  git add .
+
+&nbsp;  9  git commit -m "change mergefile.txt from feature branch"
+
+&nbsp;  10  git checkout master
+
+&nbsp;  11  git status
+
+&nbsp;  12  git status
+
+&nbsp;  13  git add .
+
+&nbsp;  14  git commit -m "changed mergefile.txt from master branch"
+
+&nbsp;  15  git log --oneline
+
+&nbsp;  16  git checkout feature
+
+&nbsp;  17  git log --oneline
+
+&nbsp;  18  git status
+
+&nbsp;  19  git commit -m "Conflict was resolved manually"
+
+&nbsp;  20  git branch -d feature
+
+&nbsp;  21  git status
+
+&nbsp;  22  git add .
+
+&nbsp;  23  git commit -m "Create a changes.txt"
+
+&nbsp;  24  git status
+
+&nbsp;  25  git add .
+
+&nbsp;  26  git commit -m "Create a anotherChanges.txt"
+
+&nbsp;  27  git reset --hard HEAD~1
+
+```
+
+
+
+\## 5. История операций
+
+
+
+```bash
+
+git log --pretty=format:"%h | %ad | %an | %s" --date=short
+
+017b008 | 2025-11-16 | 4414 Легконравов К.С. | Edited the second step, added history of branch operations. Started and filled third step, made two commits and did reset last of them.
+
+be689aa | 2025-11-16 | 4414 Легконравов К.С. | Continue fill report, added second step (change mergefile from main and feature branch, resolv the conflict)
+
+8d393ce | 2025-11-16 | 4414 Легконравов К.С. | added the screenshots folder and completed first step of report (clone repository, input personal data and add file by GitHub)
+
+aaf7039 | 2025-11-15 | 4414 Легконравов К.С. | Create a changes.txt
+
+b3efe87 | 2025-11-15 | 4414 Легконравов К.С. | Conflict was resolved manually
+
+4e07116 | 2025-11-15 | 4414 Легконравов К.С. | changed mergefile.txt from master branch
+
+5580560 | 2025-11-15 | 4414 Легконравов К.С. | change mergefile.txt from feature branch
+
+4425e6f | 2025-11-15 | kirzsl | added the file by github
+
+921f53b | 2020-11-21 | Kurtyanik | Обновление информации
+
+c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
+
+3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
+
+```
+
 
 
