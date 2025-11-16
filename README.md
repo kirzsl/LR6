@@ -8,13 +8,13 @@
 
 
 
-\## Цель работы
+\# Цель работы
 
 Изучение базовых возможностей системы управления версиями, опыт работы с Git Api, опыт работы с локальным и удаленным репозиторием.
 
 
 
-\## 1. Клон репозитория, настройка клиента git и добавление файла через интерфейс GitHub.
+\# 1. Клон репозитория, настройка клиента git и добавление файла через интерфейс GitHub.
 
 Для начала работы необходимо настроить клиент git (указать имя пользователя и электронную почту), 
 
@@ -22,13 +22,13 @@
 
 Для клонирования репозитория необходимо использовать команду git clone, это действие отображено на следующем скриншоте.
 
-!\[Демонстрация работы команды git clone](screenshots/clone\\ repository.jpg)
+\![Демонстрация работы команды git clone](screenshots/clone_repository.jpg)
 
 
 
 Настройка клиента git происходит при помощи команды git config (см. следующий скриншот).
 
-!\[Ввод персональных данных](screenshots/my\\ personal\\ data.jpg)
+\![Ввод персональных данных](screenshots/my_personal_data.jpg)
 
 
 
@@ -36,7 +36,7 @@
 
 
 
-\## 2. Получение истории операций каждой из веток, просмотр изменений и выполнение слияния в ветку master.
+\# 2. Получение истории операций каждой из веток, просмотр изменений и выполнение слияния в ветку master.
 
 Следующий шаг - слияние веток. Это важный этап, так как на нём может появиться проблема слияния файлов с одинаковых названием,
 
@@ -46,13 +46,13 @@ git checkout "название ветки". При изменении mergefile 
 
 следует коммит с понятным названием внесённых изменений.
 
-!\[Изменение mergefile с побочной ветки](screenshots/change\\ mergefile\\ from\\ feature\\ branch.jpg)
+\![Изменение mergefile с побочной ветки](screenshots/change_mergefile_from_feature_branch.jpg)
 
 
 
 Аналогичные действия необходимо произвести и в главной ветке, для этого осуществляется обратный переход при помощи той же команды.
 
-!\[Изменение mergefile c главной ветки](screenshots/change\\ mergefile\\ from\\ master\\ branch.jpg)
+\![Изменение mergefile c главной ветки](screenshots/change_mergefile_from_main_branch.jpg)
 
 
 
@@ -60,7 +60,7 @@ git checkout "название ветки". При изменении mergefile 
 
 где в качестве параметра указывается oneline, позволяющий выводить информацию с новой строки.
 
-!\[История операций веток](screenshots/history\\ from\\ feature\\ and\\ main\\ branch.jpg)
+\![История операций веток](screenshots/history_from_feature_and_mainbranch.jpg)
 
 
 
@@ -68,97 +68,93 @@ git checkout "название ветки". При изменении mergefile 
 
 производится слияние в ветку master. Осуществляется проверка с помощью git status, после чего коммит и удаление ветки feature.
 
-!\[Разрешение конфликта](screenshots/resolv\\ the\\ conflict.jpg)
+\![Разрешение конфликта](screenshots/resolve_the_conflict.jpg)
 
 
 
-\## 3. Применение изменений, их фиксация и откат.
+\# 3. Применение изменений, их фиксация и откат.
 
 Производится создание файла changes.txt, в котором добавлен какой-либо текст, осуществляется проверка выполнения и последующий коммит.
 
 Все использованные команды уже были перечислены выше.
 
-!\[Создание changes и anotherChanges](screenshots/commits\\ about\\ changes.jpg)
+\![Создание changes и anotherChanges](screenshots/commits_about_changes.jpg)
 
 
 
 По условию задания происходит откат коммита.
 
-!\[Откат коммита](screenshots/reset\\ second\\ changes.jpg)
+\![Откат коммита](screenshots/reset_second_changes.jpg)
 
 
 
-\## 4. Лог команд
+\# 4. Лог команд
 
 
 
 ```bash
 
-&nbsp;  1  git clone https://github.com/kirzsl/LR6.git
+1  git clone https://github.com/kirzsl/LR6.git
 
-&nbsp;  2  cd LR6
+2  cd LR6
 
-&nbsp;  3  git config user.name "4414 Легконравов К.С."
+3  git config user.name "4414 Легконравов К.С."
 
-&nbsp;  4  git config user.email "klegkonravov@mail.ru"
+4  git config user.email "klegkonravov@mail.ru"
 
-&nbsp;  5  git branch feature
+5  git branch feature
 
-&nbsp;  6  git checkout feature
+6  git checkout feature
 
-&nbsp;  7  git status
+7  git status
 
-&nbsp;  8  git add .
+8  git add .
 
-&nbsp;  9  git commit -m "change mergefile.txt from feature branch"
+9  git commit -m "change mergefile.txt from feature branch"
 
-&nbsp;  10  git checkout master
+10  git checkout master
 
-&nbsp;  11  git status
+11  git status
 
-&nbsp;  12  git status
+12  git status
 
-&nbsp;  13  git add .
+13  git add .
 
-&nbsp;  14  git commit -m "changed mergefile.txt from master branch"
+14  git commit -m "changed mergefile.txt from master branch"
 
-&nbsp;  15  git log --oneline
+15  git log --oneline
 
-&nbsp;  16  git checkout feature
+16  git checkout feature
 
-&nbsp;  17  git log --oneline
+17  git log --oneline
 
-&nbsp;  18  git status
+18  git status
 
-&nbsp;  19  git commit -m "Conflict was resolved manually"
+19  git commit -m "Conflict was resolved manually"
 
-&nbsp;  20  git branch -d feature
+20  git branch -d feature
 
-&nbsp;  21  git status
+21  git status
 
-&nbsp;  22  git add .
+22  git add .
 
-&nbsp;  23  git commit -m "Create a changes.txt"
+23  git commit -m "Create a changes.txt"
 
-&nbsp;  24  git status
+24  git status
 
-&nbsp;  25  git add .
+25  git add .
 
-&nbsp;  26  git commit -m "Create a anotherChanges.txt"
+26  git commit -m "Create a anotherChanges.txt"
 
-&nbsp;  27  git reset --hard HEAD~1
+27  git reset --hard HEAD~1
 
 ```
 
 
 
-\## 5. История операций
-
-
+\# 5. История операций
 
 ```bash
-
-git log --pretty=format:"%h | %ad | %an | %s" --date=short
 
 017b008 | 2025-11-16 | 4414 Легконравов К.С. | Edited the second step, added history of branch operations. Started and filled third step, made two commits and did reset last of them.
 
